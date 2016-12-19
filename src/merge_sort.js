@@ -20,7 +20,7 @@ function merge(arr) {
     let [left, right] = arr.halve();
 
     while (!left.isEmpty() || !right.isEmpty()) {
-        if ((!right[0] && left[0]) || left[0] <= right[0])
+        if (((right[0] == undefined) && left[0]) || left[0] <= right[0])
             result.push(left.shift());
         else
             result.push(right.shift());
