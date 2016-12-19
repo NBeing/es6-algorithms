@@ -1,22 +1,5 @@
 const _ = require('lodash');
 
-// Generate a list of random integers;
-const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-};
-
-const shortlist = [11, 3, 7, 4];
-const sorted_shortlist = insertsort(shortlist);
-console.log("Sorted Shortlist : ", sorted_shortlist);
-
-const num_items = 100;
-const largelist = _.range(num_items).map(n => getRandomInt(0, num_items));
-const sorted_largelist = insertsort(largelist);
-console.log("Sorted Largelist : ", sorted_largelist);
-
-
 function insert(element, list) {
     let [next, ...rest] = list;
 
@@ -34,11 +17,7 @@ function insertsort(list) {
 
 }
 
-
-
-
-
-
+module.exports = insertsort;
 
 /* Here is my best attempt at a diagram
 

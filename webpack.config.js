@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./src/merge_sort.js",
+    entry: "./src/algorithms.js",
     output: {
         filename: "./dist/bundle.js"
     },
