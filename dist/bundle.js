@@ -48,6 +48,7 @@
 
 	var merge_sort = __webpack_require__(1);
 	var insert_sort = __webpack_require__(2);
+	var quick_sort = __webpack_require__(5);
 
 	// Generate a list of random integers;
 	var getRandomInt = function getRandomInt(min, max) {
@@ -65,6 +66,11 @@
 
 	console.log("Insert Sorted List : ", insert_sorted_list);
 	console.log("Merge Sorted List  : ", merge_sorted_list);
+
+	function binary_search(element, list) {
+	    var sorted = merge_sort(list);
+	}
+	binary_search(3, [1]);
 
 /***/ },
 /* 1 */
@@ -99,7 +105,7 @@
 	        right = _arr$halve2[1];
 
 	    while (!left.isEmpty() || !right.isEmpty()) {
-	        if (!right[0] && left[0] || left[0] <= right[0]) result.push(left.shift());else result.push(right.shift());
+	        if (right[0] == undefined && left[0] || left[0] <= right[0]) result.push(left.shift());else result.push(right.shift());
 	    }
 	    return result;
 	}
@@ -17270,6 +17276,48 @@
 		return module;
 	}
 
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var quick_sort = function quick_sort(list) {
+
+	    if (list.length <= 1) return list;
+
+	    if (list.length > 0) {
+	        var _ret = function () {
+
+	            var left = [],
+	                right = [];
+
+	            var pivot = list.pop();
+
+	            list.map(function (n) {
+	                n < pivot ? left.push(n) : right.push(n);
+	            });
+
+	            return {
+	                v: [].concat(_toConsumableArray(quick_sort(left)), [pivot], _toConsumableArray(quick_sort(right)))
+	            };
+	        }();
+
+	        if ((typeof _ret === "undefined" ? "undefined" : _typeof(_ret)) === "object") return _ret.v;
+	    }
+	};
+
+	var test = [9, 4, 1, -3, 5, 2, -16, 8, 14, 32, 0, 19, 1, 7, -1];
+	var result = quick_sort(test);
+
+	console.log("====================QUICK SORTED=================== \n", result, "\n");
+
+	module.exports = quick_sort;
 
 /***/ }
 /******/ ]);
