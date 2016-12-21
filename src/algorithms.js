@@ -1,5 +1,6 @@
 const merge_sort = require('./merge_sort.js');
 const insert_sort = require('./insertion_sort_ML.js');
+const quick_sort = require('./quick_sort.js');
 
 // Generate a list of random integers;
 const getRandomInt = (min, max) => {
@@ -15,3 +16,10 @@ const merge_sorted_list = merge_sort(unsorted_list);
 
 console.log("Insert Sorted List : ", insert_sorted_list);
 console.log("Merge Sorted List  : ", merge_sorted_list);
+
+
+function binary_search(element, list) {
+    let sorted = merge_sort(list);
+
+}
+binary_search(3, [1]);
