@@ -1,6 +1,9 @@
+const _ = require('lodash');
 const merge_sort = require('./merge_sort.js');
 const insert_sort = require('./insertion_sort_ML.js');
 const quick_sort = require('./quick_sort.js');
+const BST = require('./bst.js').BST;
+const Node = require('./bst.js').Node;
 
 // Generate a list of random integers;
 const getRandomInt = (min, max) => {
@@ -18,8 +21,12 @@ console.log("Insert Sorted List : ", insert_sorted_list);
 console.log("Merge Sorted List  : ", merge_sorted_list);
 
 
-function binary_search(element, list) {
-    let sorted = merge_sort(list);
+let bst = new BST( new Node(13) );
+const setBst = bst => v => bst.insert( bst.root, new Node(v));
+unsorted_list.forEach(setBst(bst));
+console.log(bst.getHeight(bst.root));
+console.log(
+    `The resulting tree had a height of : ${bst.getHeight(bst.root)}
+     ${JSON.stringify(bst.root, null, 2)}`);
 
-}
-binary_search(3, [1]);
+console.log("Done!");
