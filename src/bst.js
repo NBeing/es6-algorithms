@@ -86,4 +86,7 @@ class BST {
                    : ( this.getHeight( root.right ) + 1 ) ;
     }
 }
-module.exports = { BST , Node};
+export { 
+    BST , 
+    Node
+};

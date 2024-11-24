@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import * as _  from 'lodash'
 
 function insert(element, list) {
     let [next, ...rest] = list;
@@ -9,15 +9,15 @@ function insert(element, list) {
     return element <= next ? [element, next, ...rest] : [next, ...insert(element, rest)];
 }
 
-function insertsort(list) {
+function insert_sort(list) {
 
     let [first, ...rest] = list;
 
-    return list.length == 0 ? list : insert(first, insertsort(rest));
+    return list.length == 0 ? list : insert(first, insert_sort(rest));
 
 }
 
-module.exports = insertsort;
+export { insert_sort };
 
 /* Here is my best attempt at a diagram
 

@@ -1,11 +1,13 @@
 {
-  "name": "es6-playground",
+  "name": "es6-algos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": { 
+    "test": "mocha ./test/**",
+    "linkedlist": "node ./src/linked_list.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,6 +19,8 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-preset-es2015": "^6.18.0"
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2"
   }
 }

@@ -38,4 +38,4 @@ function merge_sort(arr) {
         return merge([...merge_sort(left), ...merge_sort(right)]);
 }
 
-module.exports = merge_sort;
+export { merge_sort }

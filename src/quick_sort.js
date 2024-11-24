@@ -23,4 +23,4 @@ const result = quick_sort(test);
 
 console.log("====================QUICK SORTED=================== \n", result, "\n");
 
-module.exports = quick_sort;
+export { quick_sort };
